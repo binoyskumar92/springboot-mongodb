@@ -1,6 +1,3 @@
-Apologies for the confusion. Here's your copy-pastable markdown `README.md` content:
-
-```markdown
 # Spring Data Sample Code Repository
 
 This repository holds a sample program for testing out Spring Data.
@@ -54,4 +51,4 @@ This repository holds a sample program for testing out Spring Data.
     Use the `getPersonStartWith` method to retrieve data. Just pass the `personId` retrieved from the previous step.
 
 Happy coding with Spring Data!
-```
+
