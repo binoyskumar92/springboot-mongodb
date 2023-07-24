@@ -1,0 +1,13 @@
+/Users/binoy.subhakumar/BOFA/SpringData-for-mongodb/springboot-mongodb/src/main/java/com/dailycodebuffer/springbootmongodb/repository/PhotoRepository.java
+/Users/binoy.subhakumar/BOFA/SpringData-for-mongodb/springboot-mongodb/src/main/java/com/dailycodebuffer/springbootmongodb/collection/Person.java
+/Users/binoy.subhakumar/BOFA/SpringData-for-mongodb/springboot-mongodb/src/main/java/com/dailycodebuffer/springbootmongodb/controller/PhotoController.java
+/Users/binoy.subhakumar/BOFA/SpringData-for-mongodb/springboot-mongodb/src/main/java/com/dailycodebuffer/springbootmongodb/repository/PersonRepository.java
+/Users/binoy.subhakumar/BOFA/SpringData-for-mongodb/springboot-mongodb/src/main/java/com/dailycodebuffer/springbootmongodb/collection/Address.java
+/Users/binoy.subhakumar/BOFA/SpringData-for-mongodb/springboot-mongodb/src/main/java/com/dailycodebuffer/springbootmongodb/service/PhotoServiceImpl.java
+/Users/binoy.subhakumar/BOFA/SpringData-for-mongodb/springboot-mongodb/src/main/java/com/dailycodebuffer/springbootmongodb/config/SpringFoxConfig.java
+/Users/binoy.subhakumar/BOFA/SpringData-for-mongodb/springboot-mongodb/src/main/java/com/dailycodebuffer/springbootmongodb/SpringbootMongodbApplication.java
+/Users/binoy.subhakumar/BOFA/SpringData-for-mongodb/springboot-mongodb/src/main/java/com/dailycodebuffer/springbootmongodb/service/PersonServiceImpl.java
+/Users/binoy.subhakumar/BOFA/SpringData-for-mongodb/springboot-mongodb/src/main/java/com/dailycodebuffer/springbootmongodb/service/PersonService.java
+/Users/binoy.subhakumar/BOFA/SpringData-for-mongodb/springboot-mongodb/src/main/java/com/dailycodebuffer/springbootmongodb/collection/Photo.java
+/Users/binoy.subhakumar/BOFA/SpringData-for-mongodb/springboot-mongodb/src/main/java/com/dailycodebuffer/springbootmongodb/service/PhotoService.java
+/Users/binoy.subhakumar/BOFA/SpringData-for-mongodb/springboot-mongodb/src/main/java/com/dailycodebuffer/springbootmongodb/controller/PersonController.java
