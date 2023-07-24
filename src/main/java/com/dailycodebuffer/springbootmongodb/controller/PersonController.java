@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/person")
@@ -28,6 +29,11 @@ public class PersonController {
         return personService.getPersonStartWith(name);
     }
 
+    @GetMapping("/id/{id}")
+    public Optional<Person> getPersonByPersonId(@PathVariable String id) {
+        return personService.getPersonByPersonId(id);
+    }
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable String id) {
         personService.delete(id);
@@ -35,8 +41,8 @@ public class PersonController {
 
     @GetMapping("/age")
     public List<Person> getByPersonAge(@RequestParam Integer minAge,
-                                       @RequestParam Integer maxAge) {
-        return personService.getByPersonAge(minAge,maxAge);
+            @RequestParam Integer maxAge) {
+        return personService.getByPersonAge(minAge, maxAge);
     }
 
     @GetMapping("/search")
@@ -46,11 +52,9 @@ public class PersonController {
             @RequestParam(required = false) Integer maxAge,
             @RequestParam(required = false) String city,
             @RequestParam(defaultValue = "0") Integer page,
-            @RequestParam(defaultValue = "5") Integer size
-    ) {
-        Pageable pageable
-                = PageRequest.of(page,size);
-        return personService.search(name,minAge,maxAge,city,pageable);
+            @RequestParam(defaultValue = "5") Integer size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return personService.search(name, minAge, maxAge, city, pageable);
     }
 
     @GetMapping("/oldestPerson")

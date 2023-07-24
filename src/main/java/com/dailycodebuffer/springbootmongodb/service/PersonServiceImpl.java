@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PersonServiceImpl implements PersonService{
@@ -34,6 +35,11 @@ public class PersonServiceImpl implements PersonService{
     @Override
     public List<Person> getPersonStartWith(String name) {
         return personRepository.findByFirstNameStartsWith(name);
+    }
+
+   @Override
+    public Optional<Person> getPersonByPersonId(String id) {
+        return personRepository.findById(id);
     }
 
     @Override

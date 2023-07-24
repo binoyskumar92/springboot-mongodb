@@ -48,7 +48,7 @@ This repository holds a sample program for testing out Spring Data.
 
 7. **Retrieve Person Information**
 
-    Use the `getPersonStartWith` method to retrieve data. Just pass the `personId` retrieved from the previous step.
+    Use the `getPersonByPersonId` or `getPersonStartWith`(uses regex) method to retrieve data. Just pass the `personId` retrieved from the previous step.
 
 Happy coding with Spring Data!
 
