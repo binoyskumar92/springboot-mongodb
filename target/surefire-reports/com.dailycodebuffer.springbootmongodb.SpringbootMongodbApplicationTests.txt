@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.dailycodebuffer.springbootmongodb.SpringbootMongodbApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.222 s - in com.dailycodebuffer.springbootmongodb.SpringbootMongodbApplicationTests
