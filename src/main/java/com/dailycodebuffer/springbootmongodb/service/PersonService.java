@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public interface PersonService {
@@ -24,4 +25,6 @@ public interface PersonService {
     List<Document> getOldestPersonByCity();
 
     List<Document> getPopulationByCity();
+
+    List<Person> findPersons(Map<String, Object> queryParams, Map<String, Integer> projectionMap);
 }

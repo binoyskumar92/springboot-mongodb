@@ -10,7 +10,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/person")
@@ -65,5 +67,13 @@ public class PersonController {
     @GetMapping("/populationByCity")
     public List<Document> getPopulationByCity() {
         return personService.getPopulationByCity();
+    }
+
+    @PostMapping("/findPersons")
+    public List<Person> getPersons(@RequestBody Map<String, Object> body) {
+        Map<String, Object> queryParams = (Map<String, Object>) body.get("data");
+        Map<String, Integer> projectionMap = (Map<String, Integer>) body.get("projection");
+
+        return personService.findPersons(queryParams, projectionMap);
     }
 }

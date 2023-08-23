@@ -6,9 +6,11 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Repository
-public interface PersonRepository extends MongoRepository<Person,String> {
+public interface PersonRepository extends MongoRepository<Person,UUID> {
 
     List<Person> findByFirstNameStartsWith(String name);
 
@@ -17,4 +19,5 @@ public interface PersonRepository extends MongoRepository<Person,String> {
     @Query(value = "{ 'age' : { $gt : ?0, $lt : ?1}}",
            fields = "{addresses:  0}")
     List<Person> findPersonByAgeBetween(Integer min, Integer max);
+
 }

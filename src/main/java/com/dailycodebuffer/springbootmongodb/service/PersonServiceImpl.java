@@ -5,7 +5,6 @@ import com.dailycodebuffer.springbootmongodb.repository.PersonRepository;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -17,7 +16,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class PersonServiceImpl implements PersonService{
@@ -39,12 +40,14 @@ public class PersonServiceImpl implements PersonService{
 
    @Override
     public Optional<Person> getPersonByPersonId(String id) {
-        return personRepository.findById(id);
+        UUID uuid = UUID.fromString(id); // Convert the String to a UUID
+        return personRepository.findById(uuid); // Pass the UUID to findById    
     }
 
     @Override
     public void delete(String id) {
-        personRepository.deleteById(id);
+        UUID uuid = UUID.fromString(id);
+        personRepository.deleteById(uuid);
     }
 
     @Override
@@ -125,6 +128,30 @@ public class PersonServiceImpl implements PersonService{
                 Person.class,
                 Document.class).getMappedResults();
         return  documents;
+    }
+
+    @Override
+    public List<Person> findPersons(Map<String, Object> queryParams, Map<String, Integer> projectionMap) {
+        Query query = new Query();
+
+        // Adding query parameters
+        for (Map.Entry<String, Object> param : queryParams.entrySet()) {
+            query.addCriteria(Criteria.where(param.getKey()).is(param.getValue()));
+        }
+
+        // Adding projection fields
+        for (Map.Entry<String, Integer> entry : projectionMap.entrySet()) {
+            String field = entry.getKey();
+            Integer value = entry.getValue();
+
+            if ("_id".equals(field) && value == 0) {
+                query.fields().exclude("_id");
+            } else if (value == 1) {
+                query.fields().include(field);
+            }
+        }
+
+        return mongoTemplate.find(query, Person.class);
     }
 
 }
